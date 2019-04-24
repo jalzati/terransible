@@ -177,16 +177,16 @@ resource "aws_route_table_association" "public1_assoc" {
 }
 
 resource "aws_route_table_association" "public2_assoc" {
-  route_table_id = "${aws_subnet.terransible_public_subnet_2.id}"
-  subnet_id = "${aws_route_table.terransible_public_rt.id}"
+  subnet_id = "${aws_subnet.terransible_public_subnet_2.id}"
+  route_table_id = "${aws_route_table.terransible_public_rt.id}"
 }
 
 resource "aws_route_table_association" "private1_assoc" {
-  route_table_id = "${aws_default_route_table.terransible_private_rt.id}"
   subnet_id = "${aws_subnet.terransible_private_subnet_1.id}"
+  route_table_id = "${aws_default_route_table.terransible_private_rt.id}"
 }
 
 resource "aws_route_table_association" "private2_assoc" {
-  route_table_id = "${aws_default_route_table.terransible_private_rt.id}"
   subnet_id = "${aws_subnet.terransible_private_subnet_2.id}"
+  route_table_id = "${aws_default_route_table.terransible_private_rt.id}"
 }
