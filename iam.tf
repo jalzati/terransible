@@ -25,7 +25,14 @@ data "aws_iam_policy_document" "terransible_managed_statement_assume_role_policy
 }
 
 resource "aws_iam_role" "terransible_s3_access_role" {
-  name               = "terransible_s3_access_role"
+  name = "terransible_s3_access_role"
+
+  tags {
+    Name = "Terransible S3 Access"
+    Owner = "${var.owner}"
+    Department = "${var.department}"
+    Environment = "${var.environment}"
+  }
 
   assume_role_policy = "${data.aws_iam_policy_document.terransible_managed_statement_assume_role_policy_ec2.json}"
 }
