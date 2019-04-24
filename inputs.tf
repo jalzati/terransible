@@ -30,3 +30,7 @@ variable "subnet_cidrs"{
 variable "vpnip" {
   description = "IP address of the VPN Server, Dev environment only accessible from this IP address"
 }
+
+variable "bucketprefix" {
+  description = "Prefix of the S3 bucket name"
+}
