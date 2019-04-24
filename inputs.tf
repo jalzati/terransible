@@ -21,3 +21,8 @@ variable "environment" {
 variable "vpc_cidr" {
   description = "CIDR assigned to the VPC"
 }
+
+variable "subnet_cidrs"{
+  description = "CIDRs assigned to the public and private subnets"
+  type = "map"
+}
