@@ -26,3 +26,7 @@ variable "subnet_cidrs"{
   description = "CIDRs assigned to the public and private subnets"
   type = "map"
 }
+
+variable "vpnip" {
+  description = "IP address of the VPN Server, Dev environment only accessible from this IP address"
+}
