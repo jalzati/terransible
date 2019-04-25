@@ -34,3 +34,11 @@ variable "vpnip" {
 variable "bucketprefix" {
   description = "Prefix of the S3 bucket name"
 }
+
+variable "db_password" {
+  description = "The password for the database"
+}
+
+variable "db_user" {
+  description = "The username for the database"
+}
