@@ -42,3 +42,23 @@ variable "db_password" {
 variable "db_user" {
   description = "The username for the database"
 }
+
+variable "keyname" {
+  description = "Key pair to access EC2 servers"
+}
+
+variable "publickeypath" {
+  description = "Path to public key to access EC2 servers"
+}
+
+variable "dev_instance_type" {
+  description = "Instance type of Dev EC2 server"
+}
+
+variable "dev_ami" {
+  description = "AMI to create Dev EC2 server"
+}
+
+variable "domain_name" {
+  description = "Internet domain for this environment"
+}
