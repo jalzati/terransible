@@ -1,17 +1,5 @@
 #Dev Server
 
-resource "aws_eip" "dev_elasticip" {
-  vpc = true
-  instance = "${aws_instance.terransible_dev_server.id}"
-
-  tags {
-    Name = "Terransible Dev Server"
-    Owner = "${var.owner}"
-    Department = "${var.department}"
-    Environment = "${var.environment}"
-  }
-}
-
 resource "aws_key_pair" "terransible_keypair" {
   key_name   = "${var.keyname}"
   public_key = "${file(var.publickeypath)}"
@@ -46,6 +34,6 @@ EOD
   }
 
   provisioner "local-exec" {
-    command = "aws ec2 wait instance-status-ok --instance-ids ${aws_instance.terransible_dev_server.id} --profile sysadmin && ansible-playbook -i aws_hosts ansible/wordpress.yml"
+    command = "aws ec2 wait instance-status-ok --instance-ids ${aws_instance.terransible_dev_server.id} --profile default && ansible-playbook -i aws_hosts ansible/wordpress.yml"
   }
 }
