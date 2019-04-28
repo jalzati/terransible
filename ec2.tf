@@ -33,7 +33,7 @@ EOF
 EOD
   }
 
-  #user_data = "${file("install_apache.sh")}"
+  user_data = "${file("install_apache.sh")}"
   #provisioner "local-exec" {
   #  command = "aws ec2 wait instance-status-ok --instance-ids ${aws_instance.terransible_dev_server.id} --profile default && ansible-playbook -i aws_hosts ansible/wordpress.yml"
   #}

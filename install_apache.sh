@@ -1,6 +1,7 @@
 #! /bin/bash
 sudo touch /tmp/foo.txt
 sudo echo "Jorge was here!!!" > /tmp/foo.txt
+sudo yum -y update
 sudo yum -y install httpd
 sudo systemctl enable httpd
 sudo systemctl start httpd.service
